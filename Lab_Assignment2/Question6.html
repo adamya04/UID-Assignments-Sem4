@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lists in CSS</title>
+    <style>
+        #clickable-list{
+            list-style-type: circle;
+            font-style: italic;
+            padding-left: 20px;
+        }
+        #clickable-list a{
+            text-decoration: none;   /* Remove underline */
+            color: rgba(0, 0, 0, 0.806);            /* Default link color */
+            font-size: 18px;
+            transition: color 0.3s;  /* Smooth transition for color change */
+        }
+        #clickable-list a:link {
+            color: darkblue;         /* Color for unvisited links */
+        }
+
+        #clickable-list a:visited {
+            color: purple;           /* Color for visited links */
+        }
+
+        #clickable-list a:hover {
+            color: red;              /* Color on mouse hover */
+        }
+
+        #clickable-list a:active {
+            color: orange;           /* Color when the link is clicked */
+        }
+
+        
+
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center; padding-bottom: 28px;">
+        This code snippet was used to create unordered lists in HTML-CSS
+    </h1>
+    <ul id="clickable-list">
+        <li>
+            <a href="https://www.google.com/" target="_blank">Click to visit Google</a>
+        </li>
+        <li>
+            <a href="https://www.youtube.com/" target="_blank">Click to visit YouTube</a>
+        </li>
+        <li>
+            <a href="https://github.com/" target="_blank">Click to visit GitHub</a>
+        </li>
+    </ul>
+</body>
+</html>
