@@ -1,0 +1,26 @@
+/* Default image for all sizes */
+.image {
+    display: none; /* Hide all images by default */
+  }
+  
+  /* Show image for screens ≤ 600px */
+  @media only screen and (max-width: 600px) {
+    .image-small {
+      display: block;
+    }
+  }
+  
+  /* Show image for screens > 600px and ≤ 1500px */
+  @media only screen and (min-width: 601px) and (max-width: 1500px) {
+    .image-medium {
+      display: block;
+    }
+  }
+  
+  /* Show image for screens > 1500px */
+  @media only screen and (min-width: 1501px) {
+    .image-large {
+      display: block;
+    }
+  }
+  

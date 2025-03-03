@@ -1,0 +1,41 @@
+
+.container{
+    display: grid;
+    background-color: rgb(236, 157, 174);
+    grid-template-columns: 1fr 1fr 1fr;
+    height: 290px;
+    text-align: center;
+    grid-template-rows: 60px 200px 30px ;
+    outline: 1px solid black;
+    grid-template-areas: 
+    "header header header"
+    "sidebar main main"
+    "footer footer footer";
+    
+}
+
+.container > div{
+    border: 1.4px solid black;
+    padding: 10px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.header{
+    grid-area: header;
+    align-content: center;
+}
+
+.main{
+    grid-area: main;
+    align-content: center;
+}
+
+.footer{
+    grid-area: footer;
+    align-content: center;
+}
+
+.sidebar{
+    align-content: center;
+}

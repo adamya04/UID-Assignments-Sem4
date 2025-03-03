@@ -1,0 +1,21 @@
+
+.container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    
+    gap: 17px;
+    height: 330px;
+    grid-template-rows: 75px 75px 150px;
+    
+}
+.container > div{
+    background-color: rgb(37, 233, 115);
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    padding: 10px;
+}
+.item1{
+    grid-column: 1/ span 3;
+}

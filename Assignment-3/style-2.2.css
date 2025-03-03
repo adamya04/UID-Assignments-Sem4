@@ -1,0 +1,31 @@
+
+.container{
+    display: grid;
+    background-color: rgb(236, 157, 174);
+    grid-template-columns: 1fr 1fr 1fr;
+    height: 300px;
+    text-align: center;
+    grid-template-rows: 60px 180px 60px ;
+    outline: 1px solid black;
+    grid-template-areas: 
+    "header header header"
+    "loading loading loading"
+    "about vision contact";
+}
+
+.container > div{
+    border: 1px solid black;
+    padding: 10px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.header{
+    grid-area: header;
+    align-content: center;
+}
+
+.loading{
+    grid-area: loading;
+    align-content: center;
+}

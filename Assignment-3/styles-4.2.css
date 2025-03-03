@@ -1,0 +1,61 @@
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid black;
+    padding: 10px;
+    text-align: left;
+}
+
+/* At 1500px, set specific column widths */
+@media only screen and (min-width: 1500px) {
+    table {
+        width: 100%;
+    }
+    th:nth-child(1), td:nth-child(1) {
+        width: 30%;
+    }
+    th:nth-child(2), td:nth-child(2) {
+        width: 40%;
+    }
+    th:nth-child(3), td:nth-child(3) {
+        width: 30%;
+    }
+}
+
+/* At 600px, make table stack vertically */
+@media only screen and (max-width: 600px) {
+    table, thead, tbody, th, td, tr {
+        display: block;
+        width: 100%;
+    }
+
+    thead {
+        display: none; /* Hide headers */
+    }
+
+    tr {
+        margin-bottom: 10px;
+        border: 1px solid black;
+    }
+
+    td {
+        text-align: left;
+        padding-left: 50%;
+        position: relative;
+    }
+
+    td::before {
+        position: absolute;
+        left: 10px;
+        width: 45%;
+        font-weight: bold;
+    }
+
+    /* Custom labels for each row */
+    td:nth-child(1)::before { content: "First Name: "; }
+    td:nth-child(2)::before { content: "Last Name: "; }
+    td:nth-child(3)::before { content: "Age: "; }
+}
