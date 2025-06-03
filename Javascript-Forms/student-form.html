@@ -1,0 +1,121 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Student Registration Form</title>
+  <style>
+    body {
+      background-color: #0a0f1b;
+      color: white;
+      font-family: Arial;
+    }
+    .form-container {
+      width: 300px;
+      padding: 20px;
+      background-color: #1a1f2b;
+      margin: 30px auto;
+      border-radius: 10px;
+    }
+    input {
+      width: 100%;
+      padding: 5px;
+      margin: 5px 0 15px 0;
+    }
+    table, th, td {
+      border: 1px solid black;
+      border-collapse: collapse;
+      margin: 20px auto;
+      background-color: white;
+      color: black;
+    }
+    th, td {
+      padding: 8px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="form-container">
+    <h3>Student Registration Form</h3>
+    <form id="regForm" onsubmit="return validateForm()">
+      <label>Name of Student:</label>
+      <input type="text" id="name" />
+
+      <label>Mobile No:</label>
+      <input type="text" id="mobile" />
+
+      <label>Address Line:</label>
+      <input type="text" id="address" />
+
+      <label>City:</label>
+      <input type="text" id="city" />
+
+      <label>State:</label>
+      <input type="text" id="state" />
+
+      <label>Pincode:</label>
+      <input type="text" id="pincode" />
+
+      <button type="submit">Submit</button>
+      <button type="reset">Reset</button>
+    </form>
+  </div>
+
+  <table id="resultTable" style="display:none;">
+    <tr>
+      <th>Student Name</th>
+      <th>Mobile No</th>
+      <th>State</th>
+    </tr>
+    <tr>
+      <td id="resName"></td>
+      <td id="resMobile"></td>
+      <td id="resState"></td>
+    </tr>
+  </table>
+
+  <script>
+    function validateForm() {
+      const name = document.getElementById("name").value.trim();
+      const mobile = document.getElementById("mobile").value.trim();
+      const address = document.getElementById("address").value.trim();
+      const city = document.getElementById("city").value.trim();
+      const state = document.getElementById("state").value.trim();
+      const pincode = document.getElementById("pincode").value.trim();
+
+      // Check for null values
+      if (!name || !mobile || !address || !city || !state || !pincode) {
+        alert("All fields are required.");
+        return false;
+      }
+
+      // Name should contain only alphabets
+      if (!/^[A-Za-z ]+$/.test(name)) {
+        alert("Name should contain only alphabets.");
+        return false;
+      }
+
+      // Mobile number: exactly 10 digits
+      if (!/^\d{10}$/.test(mobile)) {
+        alert("Mobile number must be exactly 10 digits.");
+        return false;
+      }
+
+      // Pincode: exactly 6 digits
+      if (!/^\d{6}$/.test(pincode)) {
+        alert("Pincode must be exactly 6 digits.");
+        return false;
+      }
+
+      // Show data in the result table
+      document.getElementById("resName").textContent = name;
+      document.getElementById("resMobile").textContent = mobile;
+      document.getElementById("resState").textContent = state;
+      document.getElementById("resultTable").style.display = "table";
+
+      return false; // Prevent actual form submission
+    }
+  </script>
+
+</body>
+</html>
