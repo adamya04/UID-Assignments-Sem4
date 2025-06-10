@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Reveal Button Names</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        button { margin: 5px; }
+    </style>
+</head>
+<body>
+    <button onclick="revealName('HTML')">HTML</button>
+    <button onclick="revealName('JavaScript')">JavaScript</button>
+    <button onclick="revealName('CSS')">CSS</button>
+    <p id="message"></p>
+
+    <script>
+        function revealName(name) {
+            document.getElementById('message').innerHTML = `You have selected ${name}`;
+        }
+    </script>
+</body>
+</html>

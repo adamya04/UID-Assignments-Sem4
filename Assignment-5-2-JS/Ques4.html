@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Temperature Categorizer</title>
+</head>
+<body>
+    <script>
+        function categorizeTemperature(temp) {
+            if (temp < 0) return "Freezing";
+            else if (temp >= 0 && temp <= 15) return "Cold";
+            else if (temp >= 16 && temp <= 30) return "Moderate";
+            else return "Hot";
+        }
+
+        let temp = parseFloat(prompt("Enter the temperature:"));
+        let category = categorizeTemperature(temp);
+        console.log(`Temperature ${temp}°C is: ${category}`);
+        alert(`Temperature ${temp}°C is: ${category}`);
+    </script>
+</body>
+</html>
